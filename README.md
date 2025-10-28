@@ -1,4 +1,4 @@
-# 🧠 Philosopher AI
+#  Philosopher AI
 
 A local AI chatbot that lets you have conversations with famous philosophers such as Socrates, Aristotle, and Nietzsche.
 
@@ -8,7 +8,7 @@ Built with:
 - **Streamlit** for UI
 - **Python** for logic
 
-## 🚀 How to Run
+##  How to Run
 
 1. Install [Ollama](https://ollama.com/download)
 2. Pull the model:
