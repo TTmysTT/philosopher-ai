@@ -19,7 +19,7 @@ Built with:
    pip install -r requirements.txt
 4. Run the app
    ```bash
-   streamlit run philosopher_ai_app.py
+   streamlit run Philosopher_ai.py
 Enjoy deep conversations about life, ethics, and existence.
 
 ---
