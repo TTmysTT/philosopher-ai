@@ -1,7 +1,5 @@
 import streamlit as st
 import requests
-
-# --- Philosopher personalities ---
 PHILOSOPHERS = {
     "Socrates": """You are Socrates, the ancient Greek philosopher. 
     Respond through questions and critical reasoning. Encourage the user to think deeply about their beliefs.""",
@@ -23,19 +21,15 @@ def query_ollama(prompt):
     data = response.json()
     return data.get("response", "Error: no response from model.")
 
-# --- Streamlit UI ---
 st.set_page_config(page_title="Philosopher AI by Adeeb Sultan", page_icon="🧠", layout="centered")
 st.title("🧠 Philosopher AI by Adeeb Sultan")
 st.write("Choose a philosopher and have a conversation in their style and worldview.")
 
-# Philosopher selection
 selected_philosopher = st.selectbox("Select Philosopher:", list(PHILOSOPHERS.keys()))
 
-# Initialize chat history
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# User input
 user_input = st.text_input("You:", placeholder="Ask about life, morality, or existence...")
 
 if st.button("Ask") and user_input:
@@ -44,7 +38,6 @@ if st.button("Ask") and user_input:
     response = query_ollama(full_prompt)
     st.session_state.history.append((user_input, response))
 
-# Display chat history
 for i, (user_msg, ai_msg) in enumerate(st.session_state.history):
     st.markdown(f"**You:** {user_msg}")
     st.markdown(f"**{selected_philosopher}:** {ai_msg}")
